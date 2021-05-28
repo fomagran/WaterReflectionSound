@@ -8,11 +8,13 @@
 import UIKit
 
 class BuildingCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var waterView: UIView!
     @IBOutlet weak var buildingImageView:UIImageView!
     
-    func configure(contentViewHeight:CGFloat) {
-        imageViewHeight.constant = 200
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        buildingImageView.image = #imageLiteral(resourceName: "building1")
+        waterView.setGradient(color1: .systemBlue, color2: .white)
     }
-    
 }

@@ -14,6 +14,7 @@
 		04C032AF266104AF00FAA2B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C032AE266104AF00FAA2B6 /* Assets.xcassets */; };
 		04C032B2266104AF00FAA2B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C032B0266104AF00FAA2B6 /* LaunchScreen.storyboard */; };
 		04C032BA26610C5400FAA2B6 /* BuildingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C032B926610C5400FAA2B6 /* BuildingCollectionViewCell.swift */; };
+		04C032BC2661161A00FAA2B6 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C032BB2661161A00FAA2B6 /* Extension + UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		04C032B1266104AF00FAA2B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04C032B3266104AF00FAA2B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04C032B926610C5400FAA2B6 /* BuildingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingCollectionViewCell.swift; sourceTree = "<group>"; };
+		04C032BB2661161A00FAA2B6 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				04C032B0266104AF00FAA2B6 /* LaunchScreen.storyboard */,
 				04C032B3266104AF00FAA2B6 /* Info.plist */,
 				04C032B926610C5400FAA2B6 /* BuildingCollectionViewCell.swift */,
+				04C032BB2661161A00FAA2B6 /* Extension + UIView.swift */,
 			);
 			path = WaterReflectionSound;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C032BA26610C5400FAA2B6 /* BuildingCollectionViewCell.swift in Sources */,
+				04C032BC2661161A00FAA2B6 /* Extension + UIView.swift in Sources */,
 				04C032AA266104AE00FAA2B6 /* ViewController.swift in Sources */,
 				04C032A6266104AE00FAA2B6 /* AppDelegate.swift in Sources */,
 				04C032A8266104AE00FAA2B6 /* SceneDelegate.swift in Sources */,
