@@ -22,21 +22,35 @@ class ViewController: UIViewController {
     // Ingected Player to get power Metrics
     var player: AVAudioPlayer!
 
-    var heights:[CGFloat]!
+    var heights:[CGFloat] = [0]
     var time:Int = 0
+    var isPlaying:Bool = false
     
+    @IBOutlet weak var sunButton: GlowingButton!
     @IBOutlet weak var buildingCollection: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        playSound()
-        start()
+    
        
     }
+    @IBAction func tapSunButton(_ sender: Any) {
+    
+        if isPlaying {
+            sunButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            stop()
+            sunButton.stopAnimations()
+        }else {
+            sunButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+            playSound()
+            start()
+            sunButton.startAnimation()
+        }
+    }
+    
     
     func playSound() {
-        guard let url = Bundle.main.url(forResource: "track", withExtension: "mp3") else { return }
+        guard let url = Bundle.main.url(forResource: "기다린 만큼 더", withExtension: "mp3") else { return }
 
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
@@ -76,12 +90,17 @@ class ViewController: UIViewController {
         let index = self.time
 
         UIView.animate(withDuration: animatioтDuration, animations: {
-            self.heights[index] = floor(abs(power))*10
+            
+            self.heights[index] = 200 - floor(abs(power))*10/2
             self.buildingCollection.reloadItems(at: [IndexPath(item: index, section: 0)])
             if index > 10 {
                 self.buildingCollection.scrollToItem(at: IndexPath(item: index, section: 0), at: .right, animated: true)
             }
-            self.time += 1
+            if self.heights.count > self.time {
+                self.time += 1
+            }else {
+                self.stop()
+            }
         }) { (_) in
             if !self.player.isPlaying {
                 self.stop()

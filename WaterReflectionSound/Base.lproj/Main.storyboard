@@ -18,12 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YWW-UZ-TtK">
-                                <rect key="frame" x="0.0" y="303" width="414" height="300"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="253" width="414" height="400"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="IgZ-70-N4q"/>
+                                    <constraint firstAttribute="height" constant="400" id="IgZ-70-N4q"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="300" minimumInteritemSpacing="0.0" id="gOJ-GY-KnL">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="400" minimumInteritemSpacing="0.0" id="gOJ-GY-KnL">
                                     <size key="itemSize" width="189" height="240"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -31,7 +31,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BuildingCollectionViewCell" id="6AX-Ex-UON" customClass="BuildingCollectionViewCell" customModule="WaterReflectionSound" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="30" width="189" height="240"/>
+                                        <rect key="frame" x="0.0" y="80" width="189" height="240"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yRN-C0-F5P">
                                             <rect key="frame" x="0.0" y="0.0" width="189" height="240"/>
@@ -39,6 +39,7 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="building1" translatesAutoresizingMaskIntoConstraints="NO" id="onM-bL-5qy">
                                                     <rect key="frame" x="0.0" y="0.0" width="188" height="119.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uOC-03-UQc">
                                                     <rect key="frame" x="0.0" y="120.5" width="189" height="79"/>
@@ -67,6 +68,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="cgg-hY-MKs" secondAttribute="trailing" id="x3b-6e-AOA"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="189" height="240"/>
                                         <connections>
                                             <outlet property="buildingImageView" destination="onM-bL-5qy" id="HIe-JL-U4U"/>
@@ -79,17 +81,65 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Ia8-pD-T9b"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUn-fE-Uif" customClass="GlowingButton" customModule="WaterReflectionSound" customModuleProvider="target">
+                                <rect key="frame" x="309" y="89" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="rEt-q8-m53"/>
+                                    <constraint firstAttribute="height" constant="60" id="sBn-mg-5oA"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="play.fill" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="glowColor">
+                                        <color key="value" systemColor="systemOrangeColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxGlowSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minGlowSize">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animDuration">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wf3-Xi-qZk">
+                                <rect key="frame" x="309" y="89" width="60" height="60"/>
+                                <connections>
+                                    <action selector="tapSunButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M4f-6E-E5z"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FomaCloud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qf-Dc-wdg">
+                                <rect key="frame" x="30" y="89" width="249" height="60"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="60"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="YWW-UZ-TtK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5fK-GN-vum"/>
+                            <constraint firstItem="Wf3-Xi-qZk" firstAttribute="bottom" secondItem="CUn-fE-Uif" secondAttribute="bottom" id="6OI-xX-dd0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YWW-UZ-TtK" secondAttribute="trailing" id="9Ei-44-i8M"/>
+                            <constraint firstItem="Wf3-Xi-qZk" firstAttribute="leading" secondItem="CUn-fE-Uif" secondAttribute="leading" id="BVL-m9-WvI"/>
+                            <constraint firstItem="6qf-Dc-wdg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Gdy-3y-quM"/>
+                            <constraint firstItem="Wf3-Xi-qZk" firstAttribute="top" secondItem="CUn-fE-Uif" secondAttribute="top" id="N4m-6x-lgE"/>
+                            <constraint firstItem="CUn-fE-Uif" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="UfR-rh-mXb"/>
+                            <constraint firstItem="6qf-Dc-wdg" firstAttribute="centerY" secondItem="Wf3-Xi-qZk" secondAttribute="centerY" id="Ui6-NX-Bha"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CUn-fE-Uif" secondAttribute="trailing" constant="45" id="kwE-Df-2sy"/>
                             <constraint firstItem="YWW-UZ-TtK" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="m4D-YL-9hU"/>
+                            <constraint firstItem="Wf3-Xi-qZk" firstAttribute="trailing" secondItem="CUn-fE-Uif" secondAttribute="trailing" id="oHO-mq-xOK"/>
+                            <constraint firstItem="Wf3-Xi-qZk" firstAttribute="leading" secondItem="6qf-Dc-wdg" secondAttribute="trailing" constant="30" id="qNC-Bm-GSc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="buildingCollection" destination="YWW-UZ-TtK" id="RaX-0M-3f9"/>
+                        <outlet property="sunButton" destination="CUn-fE-Uif" id="5TS-6x-fdP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -97,10 +147,16 @@
             <point key="canvasLocation" x="95.652173913043484" y="93.75"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="CUn-fE-Uif">
+            <size key="intrinsicContentSize" width="15" height="22"/>
+        </designable>
+    </designables>
     <resources>
-        <image name="building1" width="43.333332061767578" height="162.66667175292969"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="building1" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
