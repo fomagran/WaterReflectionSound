@@ -73,10 +73,14 @@ class ViewController: UIViewController {
     @objc private func updateMeters() {
         player.updateMeters()
         let power = averagePowerFromAllChannels()
+        let index = self.time
 
         UIView.animate(withDuration: animatioтDuration, animations: {
-            self.heights[self.time] = floor(abs(power))*10
-            self.buildingCollection.reloadItems(at: [IndexPath(item: self.time, section: 0)])
+            self.heights[index] = floor(abs(power))*10
+            self.buildingCollection.reloadItems(at: [IndexPath(item: index, section: 0)])
+            if index > 10 {
+                self.buildingCollection.scrollToItem(at: IndexPath(item: index, section: 0), at: .right, animated: true)
+            }
             self.time += 1
         }) { (_) in
             if !self.player.isPlaying {
@@ -114,5 +118,4 @@ extension ViewController:UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 30, height: heights[indexPath.item])
     }
-    
 }
