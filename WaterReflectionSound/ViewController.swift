@@ -31,25 +31,27 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        setSound()
        
     }
     @IBAction func tapSunButton(_ sender: Any) {
-    
+        
         if isPlaying {
             sunButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            player.pause()
             stop()
             sunButton.stopAnimations()
         }else {
             sunButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
-            playSound()
+            player.play()
             start()
             sunButton.startAnimation()
         }
+        isPlaying.toggle()
     }
     
     
-    func playSound() {
+    func setSound() {
         guard let url = Bundle.main.url(forResource: "기다린 만큼 더", withExtension: "mp3") else { return }
 
         do {
@@ -60,7 +62,6 @@ class ViewController: UIViewController {
             let duration = player.duration
             heights = Array(repeating: 0, count:Int(floor(duration + 1)) )
             player.isMeteringEnabled = true
-            player.play()
         } catch let error {
             print(error.localizedDescription)
         }
@@ -88,23 +89,15 @@ class ViewController: UIViewController {
         player.updateMeters()
         let power = averagePowerFromAllChannels()
         let index = self.time
-
-        UIView.animate(withDuration: animatioтDuration, animations: {
-            
-            self.heights[index] = 200 - floor(abs(power))*10/2
-            self.buildingCollection.reloadItems(at: [IndexPath(item: index, section: 0)])
-            if index > 10 {
-                self.buildingCollection.scrollToItem(at: IndexPath(item: index, section: 0), at: .right, animated: true)
-            }
-            if self.heights.count > self.time {
-                self.time += 1
-            }else {
-                self.stop()
-            }
-        }) { (_) in
-            if !self.player.isPlaying {
-                self.stop()
-            }
+        heights[index] = 200 - floor(abs(power))*10/2
+        buildingCollection.reloadItems(at: [IndexPath(item: index, section: 0)])
+        if index > 10 {
+            buildingCollection.scrollToItem(at: IndexPath(item: index, section: 0), at: .right, animated: true)
+        }
+        if heights.count > time {
+            time += 1
+        }else {
+            stop()
         }
     }
 
