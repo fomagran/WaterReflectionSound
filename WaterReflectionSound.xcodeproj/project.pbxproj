@@ -15,6 +15,7 @@
 		04C032B2266104AF00FAA2B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C032B0266104AF00FAA2B6 /* LaunchScreen.storyboard */; };
 		04C032BA26610C5400FAA2B6 /* BuildingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C032B926610C5400FAA2B6 /* BuildingCollectionViewCell.swift */; };
 		04C032BC2661161A00FAA2B6 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C032BB2661161A00FAA2B6 /* Extension + UIView.swift */; };
+		04C032C02661426700FAA2B6 /* track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04C032BF2661426700FAA2B6 /* track.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		04C032B3266104AF00FAA2B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04C032B926610C5400FAA2B6 /* BuildingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingCollectionViewCell.swift; sourceTree = "<group>"; };
 		04C032BB2661161A00FAA2B6 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
+		04C032BF2661426700FAA2B6 /* track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				04C032B3266104AF00FAA2B6 /* Info.plist */,
 				04C032B926610C5400FAA2B6 /* BuildingCollectionViewCell.swift */,
 				04C032BB2661161A00FAA2B6 /* Extension + UIView.swift */,
+				04C032BF2661426700FAA2B6 /* track.mp3 */,
 			);
 			path = WaterReflectionSound;
 			sourceTree = "<group>";
@@ -130,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C032C02661426700FAA2B6 /* track.mp3 in Resources */,
 				04C032B2266104AF00FAA2B6 /* LaunchScreen.storyboard in Resources */,
 				04C032AF266104AF00FAA2B6 /* Assets.xcassets in Resources */,
 				04C032AD266104AE00FAA2B6 /* Main.storyboard in Resources */,
